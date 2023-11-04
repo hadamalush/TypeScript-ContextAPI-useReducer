@@ -9,7 +9,12 @@ export default function Header() {
 		<header>
 			<h1>ReactTimer</h1>
 
-			<Button>{timersCtx.isRunning ? "Stop Timers" : "Start Timers"}</Button>
+			<Button
+				onClick={
+					timersCtx.isRunning ? timersCtx.stopTimers : timersCtx.startTimers
+				}>
+				{timersCtx.isRunning ? "Stop Timers" : "Start Timers"}
+			</Button>
 		</header>
 	);
 }
